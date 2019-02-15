@@ -11,9 +11,19 @@ spring:
     name: microservicecloud-client-config
 
 eureka:
+  instance:
+    instance-id: microservicecloud-client-config-dev      # 别名处理
+    prefer-ip-address: true                               # 访问路径可以显示IP
   client:
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka/
+      
+# 给服务增加Info说明信息
+info:
+  app.name: atguigu-microservicecloud
+  company.name: www.atguigu.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
 
 ---
 
@@ -26,6 +36,16 @@ spring:
     name: microservicecloud-client-config
 
 eureka:
+  instance:
+    instance-id: microservicecloud-client-config-test       # 别名处理
+    prefer-ip-address: true                                 # 访问路径可以显示IP
   client:
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka/
+      
+# 给服务增加Info说明信息
+info:
+  app.name: atguigu-microservicecloud
+  company.name: www.atguigu.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
